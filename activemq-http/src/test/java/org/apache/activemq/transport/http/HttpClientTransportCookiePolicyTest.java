@@ -22,7 +22,7 @@ import static org.mockito.Mockito.mock;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.apache.activemq.transport.util.TextWireFormat;
+import org.apache.activemq.transport.http.marshallers.HttpTransportMarshaller;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.params.HttpClientParams;
 import org.junit.Before;
@@ -46,7 +46,7 @@ public class HttpClientTransportCookiePolicyTest {
      */
     @Before
     public void setUp() throws URISyntaxException {
-        transport = new HttpClientTransport(mock(TextWireFormat.class), new URI("http://localhost:8080/test"));
+        transport = new HttpClientTransport(mock(HttpTransportMarshaller.class), new URI("http://localhost:8080/test"));
     }
 
 
